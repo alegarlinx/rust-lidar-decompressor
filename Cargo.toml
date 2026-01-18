@@ -1,33 +1,7 @@
-[package]
-name = "lidar-decompressor"
-version = "0.2.0"
-edition = "2021"
-
 [dependencies]
-# Manejo de Errores y CLI
-anyhow = "1.0"
+las = "0.8"        # O la versión que tengas
 clap = { version = "4.4", features = ["derive"] }
-
-# Asincronía y Runtime
-tokio = { version = "1.32", features = ["fs", "io-util", "macros", "rt-multi-thread"] }
-
-# LiDAR (formato LAS/LAZ)
-las = { version = "0.8", features = ["laz"] }
-
-# Logging y Observabilidad
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
-
-# --- OPTIMIZACIONES DE ALTO RENDIMIENTO ---
-memmap2 = "0.9"           # Zero-copy I/O (Lee disco como si fuera RAM)
-crossbeam-channel = "0.5" # Canales MPSC más rápidos que los nativos
-indicatif = "0.17"        # Barra de progreso profesional
-num_cpus = "1.16"         # Detección de hilos del sistema
-
-[dev-dependencies]
-criterion = { version = "0.5", features = ["html_reports"] }
-tempfile = "3.8"
-
-[[bench]]
-name = "decompress"
-harness = false
+memmap2 = "0.9"
+crossbeam-channel = "0.5"
+indicatif = "0.17"
+mimalloc = "0.1"   
