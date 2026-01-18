@@ -1,4 +1,4 @@
-# High-Throughput LiDAR Decompressor (Rust) 🦀
+# High-Throughput LiDAR Decompressor BETA (Rust) 🦀
 
 ![Language](https://img.shields.io/badge/rust-1.75%2B-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
