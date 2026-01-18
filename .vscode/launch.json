@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Lidar (test.laz)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=lidar-decompressor",
+                    "--package=lidar-decompressor"
+                ],
+                "filter": {
+                    "name": "lidar-decompressor",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "test.laz",             // Argumento 1: Archivo de entrada
+                "--output", "out.las"   // Argumento 2: Archivo de salida
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release Benchmark (Velocidad Real)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--release",        // IMPORTANTE: Compila optimizado
+                    "--bin=lidar-decompressor",
+                    "--package=lidar-decompressor"
+                ],
+                "filter": {
+                    "name": "lidar-decompressor",
+                    "kind": "bin"
+                }
+            },
+            "args": ["test.laz", "--output", "bench.las"],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
