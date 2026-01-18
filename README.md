@@ -26,19 +26,18 @@ Benchmarks run on **Apple Silicon (M1/M2) MacBook Air**.
 | **CPU Utilization** | **174%** (Multicore Saturation) |
 
 > *Note: The tool maintains O(1) memory usage regardless of input file size (tested with GB-scale files).*
-# lidar-decompressor
+---
+#  Install 💻
 
-High-throughput LAZ/COPC decompressor scaffold in Rust. Current implementation streams LAZ -> LAS using the `las` crate’s built-in LAZ decoder; replace with SIMD-friendly entropy decoding, chunk-parallel scheduling, and COPC-aware tiling.
-
-## Prerequisites
+## Prerequisites💁🏻
 - Rust toolchain (cargo, rustc). Install via https://rustup.rs/.
 
-## Build
+## Build 🚧
 ```
 cargo build --release
 ```
 
-## Run
+## Run 🏃🏼
 ```
 cargo run --release -- <input.laz> --output <output.las>
 ```
